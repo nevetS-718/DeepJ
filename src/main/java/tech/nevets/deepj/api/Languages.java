@@ -1,0 +1,30 @@
+package tech.nevets.deepj.api;
+
+public enum Languages {
+    BG,
+    CS,
+    DA,
+    DE,
+    EL,
+    ENGB,
+    ENUS,
+    ES,
+    ET,
+    FI,
+    FR,
+    HU,
+    IT,
+    JA,
+    LT,
+    LV,
+    NL,
+    PL,
+    PTBR,
+    PTPT,
+    RO,
+    RU,
+    SK,
+    SL,
+    SV,
+    ZH
+}

@@ -1,0 +1,38 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group 'tech.nevets.deepj.api'
+version '1.0'
+
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_11
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+apply plugin: 'maven-publish'
+
+publishing {
+    publications{
+        maven(MavenPublication) {
+            artifact("build/libs/DeepJ-$version" + ".jar") {
+                extension 'jar'
+            }
+        }
+    }
+    repositories {
+        maven {
+            name 'nexus'
+            url "https://repo.nevets.tech/repository/maven-releases/"
+            credentials {
+                username System.getenv('nexusUser')
+                password System.getenv('nexusPass')
+            }
+        }
+    }
+}
