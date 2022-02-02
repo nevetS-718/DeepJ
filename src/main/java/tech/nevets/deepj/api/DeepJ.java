@@ -12,16 +12,16 @@ public class DeepJ {
     public DeepJ() {
     }
 
-    public HttpResponse<String> translate(String authKey, Enum<Languages> langEnum, String message) throws IOException, InterruptedException {
+    public String translate(String authKey, Enum<Languages> langEnum, String message) throws IOException, InterruptedException {
         String encodedAuthKey = URLEncoder.encode(authKey, StandardCharsets.UTF_8);
 
         String lang;
         lang = langEnum.toString();
 
         if (langEnum == Languages.ENUS) {
-            lang = "EN_US";
+            lang = "EN-US";
         } else if (langEnum == Languages.ENGB) {
-            lang = "EN_GB";
+            lang = "EN-GB";
         } else if (langEnum == Languages.PTBR) {
             lang = "PT-BR";
         } else if (langEnum == Languages.PTPT) {
@@ -38,8 +38,9 @@ public class DeepJ {
                 .uri(URI.create("https://api-free.deepl.com/v2/translate?auth_key=" + encodedAuthKey + "&target_lang=" + lang + "&text=" + encodedMessage))
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        System.out.println(response);
 
-        return response;
+        String data = response.body();
+
+        return data;
     }
 }
