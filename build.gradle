@@ -17,10 +17,6 @@ dependencies {
     implementation group: 'org.json', name: 'json', version: '20210307'
 }
 
-task setEnv {
-    Commandline "VERSION", "1.0"
-}
-
 apply plugin: 'maven-publish'
 
 publishing {
