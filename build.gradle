@@ -17,8 +17,8 @@ dependencies {
     implementation group: 'org.json', name: 'json', version: '20210307'
 }
 
-task setEnv(type: Exec) {
-    environment "VERSION", "1.0"
+task setEnv {
+    Commandline "VERSION", "1.0"
 }
 
 apply plugin: 'maven-publish'
@@ -26,7 +26,7 @@ apply plugin: 'maven-publish'
 publishing {
     publications{
         publish(MavenPublication) {
-            artifact("target/DeepJ-$version" + ".jar") {
+            artifact("target/DeepJ-$version" + "-all.jar") {
                 extension 'jar'
             }
         }
