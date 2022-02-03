@@ -5,7 +5,7 @@ plugins {
 }
 
 group 'tech.nevets.deepj'
-version '1.1'
+version '1.0'
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_11
 
@@ -21,8 +21,8 @@ apply plugin: 'maven-publish'
 
 publishing {
     publications{
-        maven(MavenPublication) {
-            artifact("build/libs/DeepJ-$version" + ".jar") {
+        publish(MavenPublication) {
+            artifact("target/DeepJ-$version" + ".jar") {
                 extension 'jar'
             }
         }
