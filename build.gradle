@@ -22,9 +22,7 @@ apply plugin: 'maven-publish'
 publishing {
     publications{
         publish(MavenPublication) {
-            artifact("target/DeepJ-$version" + ".jar") {
-                extension 'jar'
-            }
+            publication -> project.shadow.component(publication)
         }
     }
     repositories {
