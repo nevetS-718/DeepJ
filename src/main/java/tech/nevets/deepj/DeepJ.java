@@ -1,4 +1,4 @@
-package tech.nevets.deepj.api;
+package tech.nevets.deepj;
 
 import java.io.IOException;
 import java.net.URI;
@@ -43,4 +43,6 @@ public class DeepJ {
 
         return data;
     }
+
+
 }

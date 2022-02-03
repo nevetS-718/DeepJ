@@ -1,2 +1,4 @@
 rootProject.name = 'DeepJ'
+include 'jsonParser'
+include 'core'
 

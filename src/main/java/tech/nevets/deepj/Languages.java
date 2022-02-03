@@ -1,4 +1,4 @@
-package tech.nevets.deepj.api;
+package tech.nevets.deepj;
 
 public enum Languages {
     BG,
