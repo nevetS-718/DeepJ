@@ -8,11 +8,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 
-public class DeepJ {
-    public DeepJ() {
+public class Request {
+    public Request() {
     }
 
-    public String translate(String authKey, Enum<Languages> langEnum, String message) throws IOException, InterruptedException {
+    public String get(String authKey, Enum<Languages> langEnum, String message) throws IOException, InterruptedException {
         String encodedAuthKey = URLEncoder.encode(authKey, StandardCharsets.UTF_8);
 
         String lang;
@@ -43,6 +43,4 @@ public class DeepJ {
 
         return data;
     }
-
-
 }
